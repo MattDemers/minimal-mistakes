@@ -38,6 +38,13 @@ layout: default
           {% include page__meta.html %}
         </header>
       {% endunless %}
+      
+      <!-- Display featured image below title -->
+      {% if page.header.image %}
+        <div class="page__featured-image">
+          <img src="{{ page.header.image | relative_url }}" alt="{{ page.title }}">
+        </div>
+      {% endif %}
 
       <section class="page__content" itemprop="text">
         {% if page.toc %}
